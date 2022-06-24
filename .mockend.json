@@ -28,10 +28,10 @@
       "string": {}
     },
     "How_many_Hours_do_you_work__c": {
-      "int": {}
+      "int": {"min": 1, "max": 8 }
     },
     "How_many_years_of_experience__c": {
-      "int": {}
+      "int": {"min": 0, "max": 100 }
     },
     "If_No_Manager_Details__c": {
       "string": {}
