@@ -1,284 +1,52 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "description": "sampleapi",
-    "version": "1.0.0",
-    "title": "sampleapi"
-  },
-  "host": "jsonplaceholder.typicode.com",
-  "basePath": "/",
-  "tags": [
-    {
-      "name": "registrations",
-      "description": "registrations"
-    }
-  ],
-  "schemes": [
-    "https",
-    "http"
-  ],
-  "paths": {
-    "/registrations": {
-      "get": {
-        "tags": [
-          "registrations"
-        ],
-        "summary": "Add a new post",
-        "description": "",
-        "operationId": "getRegistrations",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Registration"
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid status value"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "registrations"
-        ],
-        "summary": "Add a new Registration",
-        "description": "",
-        "operationId": "addRegistration",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Registration object that needs to be added",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Registration"
-            }
-          }
-        ],
-        "responses": {
-          "405": {
-            "description": "Invalid input"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
+  "Registration": {
+    "Id": {
+      "string": {}
     },
-    "/registrations/{regId}": {
-      "get": {
-        "tags": [
-          "registrations"
-        ],
-        "summary": "Find Registration by ID",
-        "description": "Returns a single Registration",
-        "operationId": "getRegistrationById",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "regId",
-            "in": "path",
-            "description": "ID of Registration to return",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Registration"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Registration not found"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "registrations"
-        ],
-        "summary": "Updates a post in the store with json data",
-        "description": "",
-        "operationId": "updateRegistration",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "regId",
-            "in": "path",
-            "description": "ID of Registration to return",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "post object that needs to be added",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Registration"
-            }
-          }
-        ],
-        "responses": {
-          "405": {
-            "description": "Invalid input"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "registrations"
-        ],
-        "summary": "Deletes a Registration",
-        "description": "",
-        "operationId": "deleteRegistration",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "regId",
-            "in": "path",
-            "description": "Registration id to delete",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Registration not found"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    }
-  },
-  "securityDefinitions": {
-    "api_key": {
-      "type": "apiKey",
-      "name": "api_key",
-      "in": "header"
-    }
-  },
-  "definitions": {
-   "Registration": {
-      "type": "object",
-      "required": [
-        "title"
-      ],
-      "properties": {
-        "Id": {
-          "type": "string",
-          "example": "a0T7c000002G2QLEA0"
-        },
-        "Name": {
-          "type": "string",
-          "example": "RG-0002"
-        },
-        "OwnerId": {
-          "type": "string",
-          "example": "0055Y00000DX25ZQAT"
-        },
-        "Event__c": {
-          "type": "string",
-          "example": "a0S7c000003vLJUEA2"
-        },
-        "Address__c": {
-          "type": "string",
-          "example": "1 Anywhere Lane"
-        },
-        "Contact_Number__c": {
-          "type": "string",
-          "example": "123-456-7890"
-        },
-        "Email__c": {
-          "type": "string",
-          "example": "jake.invalid@invalid.com"
-        },
-        "Equipment_Procured__c": {
-          "type": "boolean",
-          "example": false
-        },
-        "First_Name__c": {
-          "type": "string",
-          "example": "James"
-        },
-        "How_many_Hours_do_you_work__c": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "How_many_years_of_experience__c": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "If_No_Manager_Details__c": {
-          "type": "string",
-          "example": ""
-        },
-        "Last_Name__c": {
-          "type": "string",
-          "example": "White"
-        },
-        "Last_Project_worked_on__c": {
-          "type": "string",
-          "example": "Genesis"
-        },
-        "Light_Equipment_Need_for_Travel__c": {
-          "type": "string",
-          "example": ""
-        },
-        "Which_day_of_the_week_do_you_work__c": {
-          "type": "string",
-          "example": "Friday"
-        }
-      }
+    "Name": {
+      "string": {}
+    },
+    "OwnerId": {
+      "string": {}
+    },
+    "Event__c": {
+      "string": {}
+    },
+    "Address__c": {
+      "string": {}
+    },
+    "Contact_Number__c": {
+      "string": {}
+    },
+    "Email__c": {
+      "string": {}
+    },
+    "Equipment_Procured__c": {
+      "boolean": {}
+    },
+    "First_Name__c": {
+      "string": {}
+    },
+    "How_many_Hours_do_you_work__c": {
+      "int": {}
+    },
+    "How_many_years_of_experience__c": {
+      "int": {}
+    },
+    "If_No_Manager_Details__c": {
+      "string": {}
+    },
+    "Last_Name__c": {
+      "string": {}
+    },
+    "Last_Project_worked_on__c": {
+      "string": {}
+    },
+    "Light_Equipment_Need_for_Travel__c": {
+      "string": {}
+    },
+    "Which_day_of_the_week_do_you_work__c": {
+      "string": {}
     }
   }
 }
