@@ -1,7 +1,7 @@
 {
   "Registration": {
     "Id": {
-      "regexp": "[0-9a-zA-Z]{15}"
+      "regexp": "^[0-9a-zA-Z]{15}$"
     },
     "Name": {
       "string": {}
