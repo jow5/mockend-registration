@@ -1,7 +1,7 @@
 {
   "Registration": {
     "Id": {
-      "string": {"regexp": "[0-9a-zA-Z]{15}"}
+      "regexp": "[0-9a-zA-Z]{15}"
     },
     "Name": {
       "string": {}
@@ -16,16 +16,16 @@
       "string": {}
     },
     "Contact_Number__c": {
-      "string": { "regexp": "[2-9][0-9]{2}-[2-9][0-9]{2}-[0-9]{4}" }
+      "regexp": "[2-9][0-9]{2}-[2-9][0-9]{2}-[0-9]{4}" 
     },
     "Email__c": {
-      "string": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" }
+      "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
     },
     "First_Name__c": {
-      "string": { "regexp": "[A-Z][a-z]{5,10}" }
+      "regexp": "[A-Z][a-z]{5,10}" 
     },
     "Last_Name__c": {
-      "string": { "regexp": "[A-Z][a-z]{5,10}" }
+      "regexp": "[A-Z][a-z]{5,10}"
     },
     "Which_day_of_the_week_do_you_work__c": {
       "string": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
