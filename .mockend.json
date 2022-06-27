@@ -16,25 +16,39 @@
       "string": {}
     },
     "Contact_Number__c": {
-      "regexp": "[2-9][0-9]{2}-[2-9][0-9]{2}-[0-9]{4}" 
+      "regexp": "[2-9][0-9]{2}-[2-9][0-9]{2}-[0-9]{4}"
     },
     "Email__c": {
       "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
     },
     "First_Name__c": {
-      "regexp": "[A-Z][a-z]{5,10}" 
+      "regexp": "[A-Z][a-z]{5,10}"
     },
     "Last_Name__c": {
       "regexp": "[A-Z][a-z]{5,10}"
     },
     "Which_day_of_the_week_do_you_work__c": {
-      "string": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      "string": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
     },
     "How_many_Hours_do_you_work__c": {
-      "int": {"min": 1, "max": 8 }
+      "int": {
+        "min": 1,
+        "max": 8
+      }
     },
     "How_many_years_of_experience__c": {
-      "int": {"min": 0, "max": 100 }
+      "int": {
+        "min": 0,
+        "max": 100
+      }
     },
     "If_No_Manager_Details__c": {
       "string": {}
@@ -43,10 +57,56 @@
       "string": {}
     },
     "Light_Equipment_Need_for_Travel__c": {
-      "string": ["", "Camera", "Tripod", "Light stand", "Microphone-Hand", "Microphone-Lavalier"]
+      "string": [
+        "",
+        "Camera",
+        "Tripod",
+        "Light stand",
+        "Microphone-Hand",
+        "Microphone-Lavalier"
+      ]
     },
     "Equipment_Procured__c": {
       "boolean": {}
+    }
+  },
+  "Post": {
+    "userId": {
+      "int": {
+        "min": 1,
+        "max": 100
+      }
+    },
+    "title": {
+      "loremSentences": {
+        "minLength": 100,
+        "maxLength": 200
+      }
+    },
+    "body": {
+      "loremParagraphs": {
+        "minLength": 100,
+        "maxLength": 1000
+      }
+    }
+  },
+  "ApiResponse": {
+    "code": {
+      "int": [
+        200,
+        201,
+        300,
+        301,
+        400,
+        404,
+        405
+      ]
+    },
+    "type": {
+      "string": {}
+    },
+    "message": {
+      "string": {}
     }
   }
 }
